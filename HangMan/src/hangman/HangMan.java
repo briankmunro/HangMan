@@ -58,7 +58,6 @@ public class HangMan {
 		else System.out.println("Congratulations! You guessed " + word);
 			
 	}
-
 	
 	 /**
 	  * Checks the user input and matches it against the word.
