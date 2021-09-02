@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Replicates the classic hangman game using a randomized list of 20 words.
+ * @author Brian Munro
+ *
+ */
 public class HangMan {
 
 	public static void main(String[] args) {
@@ -54,6 +59,11 @@ public class HangMan {
 			
 	}
 
+	
+	 /**
+	  * Checks the user input and matches it against the word.
+	  * @return
+	  */
 	private static Character nextLetter() {
 		Scanner in = new Scanner(System.in);
 		boolean isChar = false;
