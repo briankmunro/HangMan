@@ -20,9 +20,10 @@ public class HangMan {
 		List<Character> incorrect = new ArrayList<Character>();
 		words.addAll(Arrays.asList("GRAPES", "ORANGE", "HOUSE", "PAPERS", "HANGMAN", "PENCIL", "CHILDREN", "CRAYONS",
 				"FOOTBALL", "OATMEAL", "COMPUTER", "SCHOOL", "AUTOMOBILE", "ZEBRA", "PURPLE", "STORIES", "TELEPHONE",
-				"PARENTS", "VACATION", "HAWAII", "ELEPHANT", "WALKING", "BICYCLE", "RECREATION", "CHURCHES"));
+				"PARENTS", "VACATION", "HAWAII", "ELEPHANT", "WALKING", "BICYCLE", "RECREATION", "CHURCHES", "CEREAL",
+				"COLORS", "CHICKEN", "SPAGHETTI", "HANGMAN", "CHECKERS"));
 		Random rand = new Random();
-		int randIndex = rand.nextInt(26);
+		int randIndex = rand.nextInt(words.size() + 1);
 		String word = words.get(randIndex); 
 		
 		for (int i = 0; i < word.length(); i++) correct.add('_');
@@ -30,10 +31,9 @@ public class HangMan {
 		System.out.println("Welcome to Hangman.");
 		System.out.println();
 		
-		while (lives > 0 && correct.contains('_')){
-			System.out.println("You have " + lives + " lives left.");
+		while (lives > 0 && correct.contains('_')){			
 			for (Character e : correct) System.out.print(e + " ");
-			System.out.println();
+			System.out.println("(You have " + lives + " lives left.)");
 			System.out.println();
 			boolean wrong = true;
 			Character c = nextLetter();
@@ -54,7 +54,7 @@ public class HangMan {
 				
 		}
 		
-		if (lives == 0) System.out.println("Sorry, you died.");
+		if (lives == 0) System.out.println("Sorry, you are out of lives.");
 		else System.out.println("Congratulations! You guessed " + word);
 			
 	}
